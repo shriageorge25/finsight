@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import analytics_bridge
 import db
 import forecast as fc
+import scoring
 
 app = FastAPI(title="FinSight API")
 
@@ -41,3 +42,9 @@ def load(business_id):
 def get_forecast(business_id: str, days: int = Query(90, ge=1, le=365)):
     business, transactions, invoices, obligations = load(business_id)
     return fc.simulate(business, transactions, invoices, obligations, days=days)
+
+@app.get("/businesses/{business_id}/summary")
+def get_summary(business_id: str):
+    business, transactions, invoices, obligations = load(business_id)
+    f = fc.simulate(business, transactions, invoices, obligations)
+    return scoring.compute_summary(business, transactions, invoices, obligations, f)
