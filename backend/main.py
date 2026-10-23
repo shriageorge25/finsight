@@ -1,4 +1,5 @@
 from datetime import date
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -29,31 +30,48 @@ def health():
     }
 
 
-@app.get("/businesses")
-def businesses():
-    return db.list_businesses()
-
 def load(business_id):
     """Fetch one business's data, or return a clean 404 if it doesn't exist."""
     data = db.get_data(business_id)
     if data is None:
         raise HTTPException(status_code=404, detail="Unknown business")
     return data
+
+
 class LoanRequest(BaseModel):
     amount: float = Field(gt=0)
     rate: float = Field(gt=0, le=100)  # annual percent
     tenure_months: int = Field(ge=1, le=360)
+
+
+@app.get("/businesses")
+def businesses():
+    result = []
+    for b in db.list_businesses():
+        business, transactions, invoices, obligations = load(b["_id"])
+        f = fc.simulate(business, transactions, invoices, obligations)
+        summary = scoring.compute_summary(business, transactions, invoices, obligations, f)
+        result.append({
+            "id": b["_id"],
+            "name": b["name"],
+            "sector": b["sector"],
+            "status": summary["status"],
+        })
+    return result
+
 
 @app.get("/businesses/{business_id}/forecast")
 def get_forecast(business_id: str, days: int = Query(90, ge=1, le=365)):
     business, transactions, invoices, obligations = load(business_id)
     return fc.simulate(business, transactions, invoices, obligations, days=days)
 
+
 @app.get("/businesses/{business_id}/summary")
 def get_summary(business_id: str):
     business, transactions, invoices, obligations = load(business_id)
     f = fc.simulate(business, transactions, invoices, obligations)
     return scoring.compute_summary(business, transactions, invoices, obligations, f)
+
 
 @app.post("/businesses/{business_id}/loan-simulate")
 def loan_simulate(business_id: str, req: LoanRequest):
@@ -65,10 +83,12 @@ def loan_simulate(business_id: str, req: LoanRequest):
         tenure_months=req.tenure_months,
     )
 
+
 @app.get("/businesses/{business_id}/late-payers")
 def late_payers(business_id: str):
     business, transactions, invoices, obligations = load(business_id)
     return analytics_bridge.get_late_payers(invoices)
+
 
 @app.get("/businesses/{business_id}/overdue-invoices")
 def overdue_invoices(business_id: str):
@@ -86,6 +106,7 @@ def overdue_invoices(business_id: str):
                     "days_overdue": days,
                 })
     return result
+
 
 @app.get("/businesses/{business_id}/inconsistencies")
 def inconsistencies(business_id: str):
