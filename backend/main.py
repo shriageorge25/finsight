@@ -1,9 +1,11 @@
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
 
 import analytics_bridge
 import db
 import forecast as fc
+import loan
 import scoring
 
 app = FastAPI(title="FinSight API")
@@ -36,7 +38,10 @@ def load(business_id):
     if data is None:
         raise HTTPException(status_code=404, detail="Unknown business")
     return data
-
+class LoanRequest(BaseModel):
+    amount: float = Field(gt=0)
+    rate: float = Field(gt=0, le=100)  # annual percent
+    tenure_months: int = Field(ge=1, le=360)
 
 @app.get("/businesses/{business_id}/forecast")
 def get_forecast(business_id: str, days: int = Query(90, ge=1, le=365)):
@@ -48,3 +53,13 @@ def get_summary(business_id: str):
     business, transactions, invoices, obligations = load(business_id)
     f = fc.simulate(business, transactions, invoices, obligations)
     return scoring.compute_summary(business, transactions, invoices, obligations, f)
+
+@app.post("/businesses/{business_id}/loan-simulate")
+def loan_simulate(business_id: str, req: LoanRequest):
+    business, transactions, invoices, obligations = load(business_id)
+    return loan.simulate_loan(
+        business, transactions, invoices, obligations,
+        amount=req.amount,
+        annual_rate_pct=req.rate,
+        tenure_months=req.tenure_months,
+    )
