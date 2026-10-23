@@ -25,7 +25,7 @@ def _to_date(value):
 
 
 def _invoice_id(inv):
-    for key in ("_id", "invoice_id", "id"):
+    for key in ("invoice_id", "_id", "id"):
         if inv.get(key) is not None:
             return str(inv[key])
     return None
@@ -83,8 +83,8 @@ def _credit_pattern(inv_id):
 def find_inconsistencies(transactions, invoices):
     """[{invoice_id, issue, reason, severity}] using the three agreed labels."""
     findings = []
-    credit_text = [str(t.get("description", ""))
-                   for t in transactions if t.get("type") == "credit"]
+        credits = [(str(t.get("description", "")), float(t.get("amount", 0)))
+               for t in transactions if t.get("type") == "credit"]
 
     # 1) Marked paid but no credit transaction mentions the invoice id
     for inv in invoices:
@@ -92,7 +92,8 @@ def find_inconsistencies(transactions, invoices):
         if inv_id is None or _to_date(inv.get("paid_date")) is None:
             continue
         pattern = _credit_pattern(inv_id)
-        if not any(pattern.search(text) for text in credit_text):
+        if not any(pattern.search(text) for text, amt in credits
+            if abs(amt - float(inv["amount"])) < 0.01):
             findings.append({
                 "invoice_id": inv_id,
                 "issue": ISSUE_NO_DEPOSIT,

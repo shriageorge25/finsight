@@ -141,6 +141,7 @@ Detection rules (so judges get one consistent answer):
 Marked paid, no matching bank deposit: paid_date is set but, within the same business, no credit transaction has a description containing the invoice number (inv_34 matches "INV-034", zero-padding ignored) and an amount equal to the invoice amount.
 Possible duplicate invoice: same customer, amount and issue_date as another invoice.
 Suspicious round-number entry: an invoice whose amount is an exact multiple of 10,000 and at least 50,000. Example: b3 inv_57, amount 100000. (Team choice, not in the original spec.)
+Inconsistency `invoice_id` is the plain invoice number (e.g. "inv_34"), taken from the invoice's `invoice_id` field. Mongo `_id` is business-scoped (e.g. "b2_inv_34"); `business_id` is stored on every invoice.
 Health score (backend/scoring.py, formula-based)
 `health_score` = sum of five integer components. Status: healthy >= 70, watch >= 45, else at_risk.
 Component	Max	Formula
