@@ -23,6 +23,7 @@ export default function Layout() {
                     <NavLink to="/loan">Loan Simulator</NavLink>
                     <NavLink to="/inconsistencies">Inconsistencies</NavLink>
                     <NavLink to="/overdue">Overdue</NavLink>
+                    <NavLink to="/late-payers">Late payers</NavLink>
                 </nav>
                 <span className="spacer" />
                 {usingMock && <span className="badge mock">Demo mode: some data is mock</span>}

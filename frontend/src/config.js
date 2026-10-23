@@ -8,7 +8,7 @@ export const MOCK = {
     summary: false,
     forecast: false,
     loanSimulate: false,
-    latePayers: true,
+    latePayers: false,
     inconsistencies: false,
     overdue: false,
     actionsSimulate: true,
