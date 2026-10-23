@@ -127,3 +127,32 @@ def stress(business_id: str, req: StressRequest):
         business, transactions, scaled, obligations,
         delay_shift=req.delay_days,
     )
+
+
+class ActionRequest(BaseModel):
+    collect_invoice_ids: list[str]
+
+
+def _worst_shortfall(f):
+    return max(0.0, -min(f["low"]))
+
+
+@app.post("/businesses/{business_id}/actions/simulate")
+def actions_simulate(business_id: str, req: ActionRequest):
+    business, transactions, invoices, obligations = load(business_id)
+    unpaid_ids = {inv.get("invoice_id") or inv.get("_id")
+                  for inv in invoices if not inv.get("paid_date")}
+    unknown = [i for i in req.collect_invoice_ids if i not in unpaid_ids]
+    if unknown:
+        raise HTTPException(status_code=422,
+                            detail=f"Not unpaid invoices of this business: {unknown}")
+    base = fc.simulate(business, transactions, invoices, obligations)
+    after = fc.simulate(business, transactions, invoices, obligations,
+                        collect_ids=set(req.collect_invoice_ids))
+    before_gap = _worst_shortfall(base)
+    after_gap = _worst_shortfall(after)
+    if before_gap <= 0:
+        pct = 0
+    else:
+        pct = max(0, min(100, round(100 * (before_gap - after_gap) / before_gap)))
+    return {"gap_closed_pct": pct, "forecast_after": after}

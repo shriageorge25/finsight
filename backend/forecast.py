@@ -67,7 +67,7 @@ def _fixed_outflows(dates, recurring, obligations):
 
 def simulate(business, transactions, invoices, obligations,
              days=90, n_sims=N_SIMS, seed=SEED, extra_outflows=None,
-             delay_shift=0):
+             delay_shift=0, collect_ids=None):
     """Return {dates, expected, low, high, negative_probability}, all the same length."""
     as_of = _d(business["as_of_date"])
     dates = [as_of + timedelta(days=i) for i in range(1, days + 1)]
@@ -85,6 +85,9 @@ def simulate(business, transactions, invoices, obligations,
     rows = np.arange(n_sims)
 
     for j, inv in enumerate(unpaid):
+        if collect_ids and (inv.get("invoice_id") or inv.get("_id")) in collect_ids:
+            inflow[:, 0] += inv["amount"]  # collected: money arrives tomorrow
+            continue
         due_offset = (_d(inv["due_date"]) - as_of).days  # negative if already overdue
         late = max(0, -due_offset)
         pool = np.array(stats.get(inv["customer"], {}).get("samples") or pooled)
