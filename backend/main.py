@@ -159,3 +159,17 @@ def actions_simulate(business_id: str, req: ActionRequest):
 
 from statements import router as statements_router
 app.include_router(statements_router)
+
+import explain
+
+
+@app.get("/businesses/{business_id}/explain")
+def explain_business(business_id: str):
+    summary = get_summary(business_id)
+    try:
+        text = explain.explain_summary(summary)
+    except Exception:
+        raise HTTPException(status_code=503, detail="The explanation service is unavailable")
+    if not text:
+        raise HTTPException(status_code=503, detail="The explanation service returned nothing")
+    return {"summary": text}
