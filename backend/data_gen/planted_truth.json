@@ -1,0 +1,122 @@
+{
+  "seed": 42,
+  "as_of_date": "2026-10-24",
+  "realised_delays": {
+    "b1": {
+      "Gowda Fashions": {
+        "mean_delay": 0.08,
+        "paid_invoices": 12
+      },
+      "Lakshmi Silks": {
+        "mean_delay": -0.92,
+        "paid_invoices": 12
+      },
+      "Jain Cloth House": {
+        "mean_delay": 3.17,
+        "paid_invoices": 12
+      },
+      "Rao Retail Mart": {
+        "mean_delay": 5.67,
+        "paid_invoices": 12
+      },
+      "Anand Garments": {
+        "mean_delay": 1.75,
+        "paid_invoices": 12
+      }
+    },
+    "b2": {
+      "Mehta Traders": {
+        "mean_delay": 44.92,
+        "paid_invoices": 12
+      },
+      "Mysore Bearings Co": {
+        "mean_delay": -1.17,
+        "paid_invoices": 12
+      },
+      "Karnataka Motors": {
+        "mean_delay": 2.33,
+        "paid_invoices": 12
+      },
+      "Sri Venkateshwara Garage": {
+        "mean_delay": 1.5,
+        "paid_invoices": 12
+      },
+      "Deccan Auto Spares": {
+        "mean_delay": 0.92,
+        "paid_invoices": 12
+      }
+    },
+    "b3": {
+      "Udupi Fresh Dairy": {
+        "mean_delay": 24.46,
+        "paid_invoices": 24
+      },
+      "Brigade Catering": {
+        "mean_delay": 16.75,
+        "paid_invoices": 12
+      },
+      "Hotel Mayura": {
+        "mean_delay": 15.33,
+        "paid_invoices": 12
+      },
+      "Cafe Filter Kaapi": {
+        "mean_delay": 12.75,
+        "paid_invoices": 12
+      }
+    }
+  },
+  "paid_but_no_deposit": {
+    "business_id": "b2",
+    "invoice_ids": [
+      "inv_34",
+      "inv_38",
+      "inv_44"
+    ],
+    "details": [
+      {
+        "invoice_id": "inv_34",
+        "label": "INV-034",
+        "customer": "Mysore Bearings Co",
+        "amount": 111157,
+        "paid_date": "2026-05-16"
+      },
+      {
+        "invoice_id": "inv_44",
+        "label": "INV-044",
+        "customer": "Mysore Bearings Co",
+        "amount": 144046,
+        "paid_date": "2026-07-14"
+      },
+      {
+        "invoice_id": "inv_38",
+        "label": "INV-038",
+        "customer": "Karnataka Motors",
+        "amount": 157083,
+        "paid_date": "2026-06-09"
+      }
+    ]
+  },
+  "slow_payer": {
+    "business_id": "b2",
+    "customer": "Mehta Traders",
+    "true_avg_delay_days": 44.92,
+    "paid_invoices": 12,
+    "configured_mean_delay": 41
+  },
+  "duplicate_invoices": {
+    "business_id": "b3",
+    "invoice_ids": [
+      "inv_60",
+      "inv_61"
+    ],
+    "customer": "Udupi Fresh Dairy",
+    "amount": 62519,
+    "issue_date": "2026-08-20",
+    "expected_flag": "inv_61"
+  },
+  "round_number_entry": {
+    "business_id": "b3",
+    "invoice_id": "inv_57",
+    "amount": 100000
+  }
+}

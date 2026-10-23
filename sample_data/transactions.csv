@@ -1,0 +1,322 @@
+business_id,date,description,amount,type,category
+b1,2025-11-01,Salaries - Staff Payroll,180000,debit,salaries
+b1,2025-11-02,Rent - Commercial Premises,45000,debit,rent
+b1,2025-11-05,Electricity and Utilities,18000,debit,electricity
+b1,2025-11-05,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2025-11-09,INV-001 payment - Gowda Fashions,148283,credit,invoice_payment
+b1,2025-11-11,INV-002 payment - Lakshmi Silks,131510,credit,invoice_payment
+b1,2025-11-11,INV-003 payment - Jain Cloth House,86719,credit,invoice_payment
+b1,2025-11-22,INV-004 payment - Rao Retail Mart,129533,credit,invoice_payment
+b1,2025-11-25,INV-005 payment - Anand Garments,149137,credit,invoice_payment
+b1,2025-12-01,Electricity and Utilities,18000,debit,electricity
+b1,2025-12-01,Rent - Commercial Premises,45000,debit,rent
+b1,2025-12-01,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2025-12-03,Salaries - Staff Payroll,180000,debit,salaries
+b1,2025-12-09,INV-007 payment - Lakshmi Silks,99149,credit,invoice_payment
+b1,2025-12-11,INV-006 payment - Gowda Fashions,152086,credit,invoice_payment
+b1,2025-12-17,INV-008 payment - Jain Cloth House,133999,credit,invoice_payment
+b1,2025-12-19,INV-009 payment - Rao Retail Mart,128180,credit,invoice_payment
+b1,2025-12-22,INV-010 payment - Anand Garments,146789,credit,invoice_payment
+b1,2026-01-04,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-01-05,Electricity and Utilities,18000,debit,electricity
+b1,2026-01-05,Rent - Commercial Premises,45000,debit,rent
+b1,2026-01-05,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-01-06,INV-011 payment - Lakshmi Silks,114413,credit,invoice_payment
+b1,2026-01-08,INV-013 payment - Gowda Fashions,140190,credit,invoice_payment
+b1,2026-01-10,INV-012 payment - Jain Cloth House,134743,credit,invoice_payment
+b1,2026-01-14,INV-014 payment - Rao Retail Mart,112396,credit,invoice_payment
+b1,2026-01-23,INV-015 payment - Anand Garments,141856,credit,invoice_payment
+b1,2026-02-01,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-02-01,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-02-02,Rent - Commercial Premises,45000,debit,rent
+b1,2026-02-05,Electricity and Utilities,18000,debit,electricity
+b1,2026-02-06,INV-016 payment - Lakshmi Silks,132035,credit,invoice_payment
+b1,2026-02-11,INV-017 payment - Jain Cloth House,132366,credit,invoice_payment
+b1,2026-02-11,INV-018 payment - Gowda Fashions,110224,credit,invoice_payment
+b1,2026-02-15,INV-019 payment - Rao Retail Mart,115871,credit,invoice_payment
+b1,2026-02-19,INV-020 payment - Anand Garments,148887,credit,invoice_payment
+b1,2026-03-01,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-03-01,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-03-02,Rent - Commercial Premises,45000,debit,rent
+b1,2026-03-05,Electricity and Utilities,18000,debit,electricity
+b1,2026-03-09,INV-021 payment - Lakshmi Silks,132518,credit,invoice_payment
+b1,2026-03-09,INV-023 payment - Gowda Fashions,149335,credit,invoice_payment
+b1,2026-03-13,INV-022 payment - Jain Cloth House,158990,credit,invoice_payment
+b1,2026-03-13,INV-024 payment - Rao Retail Mart,136836,credit,invoice_payment
+b1,2026-03-24,INV-025 payment - Anand Garments,138213,credit,invoice_payment
+b1,2026-04-01,Electricity and Utilities,18000,debit,electricity
+b1,2026-04-02,Rent - Commercial Premises,45000,debit,rent
+b1,2026-04-04,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-04-05,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-04-06,INV-026 payment - Lakshmi Silks,123646,credit,invoice_payment
+b1,2026-04-09,INV-027 payment - Gowda Fashions,142417,credit,invoice_payment
+b1,2026-04-15,INV-028 payment - Jain Cloth House,97411,credit,invoice_payment
+b1,2026-04-21,INV-030 payment - Anand Garments,125484,credit,invoice_payment
+b1,2026-04-23,INV-029 payment - Rao Retail Mart,125355,credit,invoice_payment
+b1,2026-05-01,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-05-02,Rent - Commercial Premises,45000,debit,rent
+b1,2026-05-05,Electricity and Utilities,18000,debit,electricity
+b1,2026-05-05,INV-031 payment - Lakshmi Silks,123173,credit,invoice_payment
+b1,2026-05-05,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-05-10,INV-032 payment - Gowda Fashions,140892,credit,invoice_payment
+b1,2026-05-22,INV-033 payment - Jain Cloth House,142838,credit,invoice_payment
+b1,2026-05-22,INV-035 payment - Anand Garments,167853,credit,invoice_payment
+b1,2026-05-25,INV-034 payment - Rao Retail Mart,113540,credit,invoice_payment
+b1,2026-06-01,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-06-04,Electricity and Utilities,18000,debit,electricity
+b1,2026-06-05,INV-037 payment - Gowda Fashions,128827,credit,invoice_payment
+b1,2026-06-05,Rent - Commercial Premises,45000,debit,rent
+b1,2026-06-05,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-06-06,INV-036 payment - Lakshmi Silks,136471,credit,invoice_payment
+b1,2026-06-15,INV-038 payment - Jain Cloth House,118367,credit,invoice_payment
+b1,2026-06-19,INV-040 payment - Anand Garments,144169,credit,invoice_payment
+b1,2026-06-20,INV-039 payment - Rao Retail Mart,114425,credit,invoice_payment
+b1,2026-07-03,Electricity and Utilities,18000,debit,electricity
+b1,2026-07-03,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-07-05,Rent - Commercial Premises,45000,debit,rent
+b1,2026-07-05,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-07-07,INV-043 payment - Lakshmi Silks,126174,credit,invoice_payment
+b1,2026-07-09,INV-042 payment - Jain Cloth House,139960,credit,invoice_payment
+b1,2026-07-11,INV-041 payment - Gowda Fashions,136147,credit,invoice_payment
+b1,2026-07-14,INV-045 payment - Anand Garments,121512,credit,invoice_payment
+b1,2026-07-20,INV-044 payment - Rao Retail Mart,151674,credit,invoice_payment
+b1,2026-08-02,Electricity and Utilities,18000,debit,electricity
+b1,2026-08-02,Rent - Commercial Premises,45000,debit,rent
+b1,2026-08-03,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-08-03,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-08-04,INV-046 payment - Gowda Fashions,169875,credit,invoice_payment
+b1,2026-08-04,INV-048 payment - Lakshmi Silks,114211,credit,invoice_payment
+b1,2026-08-09,INV-047 payment - Jain Cloth House,100678,credit,invoice_payment
+b1,2026-08-10,INV-050 payment - Anand Garments,129804,credit,invoice_payment
+b1,2026-08-26,INV-049 payment - Rao Retail Mart,119839,credit,invoice_payment
+b1,2026-08-28,INV-052 payment - Jain Cloth House,155037,credit,invoice_payment
+b1,2026-09-02,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-09-03,Electricity and Utilities,18000,debit,electricity
+b1,2026-09-04,INV-051 payment - Gowda Fashions,140143,credit,invoice_payment
+b1,2026-09-04,Rent - Commercial Premises,45000,debit,rent
+b1,2026-09-04,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-09-09,INV-053 payment - Lakshmi Silks,111293,credit,invoice_payment
+b1,2026-09-10,INV-054 payment - Rao Retail Mart,119477,credit,invoice_payment
+b1,2026-09-20,INV-055 payment - Anand Garments,146649,credit,invoice_payment
+b1,2026-10-01,Electricity and Utilities,18000,debit,electricity
+b1,2026-10-01,Salaries - Staff Payroll,180000,debit,salaries
+b1,2026-10-03,INV-057 payment - Gowda Fashions,143413,credit,invoice_payment
+b1,2026-10-03,Rent - Commercial Premises,45000,debit,rent
+b1,2026-10-04,Supplier purchase - Surat Fabrics Ltd,300000,debit,supplier purchase
+b1,2026-10-07,INV-058 payment - Lakshmi Silks,119867,credit,invoice_payment
+b1,2026-10-08,INV-056 payment - Jain Cloth House,113281,credit,invoice_payment
+b1,2026-10-19,INV-059 payment - Rao Retail Mart,116192,credit,invoice_payment
+b1,2026-10-22,INV-060 payment - Anand Garments,129507,credit,invoice_payment
+b2,2025-11-01,Electricity and Utilities,25000,debit,electricity
+b2,2025-11-03,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2025-11-04,Rent - Factory Shed,60000,debit,rent
+b2,2025-11-04,Salaries - Staff Payroll,220000,debit,salaries
+b2,2025-11-05,INV-003 payment - Mysore Bearings Co,137577,credit,invoice_payment
+b2,2025-11-09,INV-004 payment - Karnataka Motors,153404,credit,invoice_payment
+b2,2025-11-11,INV-005 payment - Sri Venkateshwara Garage,167287,credit,invoice_payment
+b2,2025-11-18,INV-002 payment - Mehta Traders,183657,credit,invoice_payment
+b2,2025-11-19,INV-007 payment - Deccan Auto Spares,132785,credit,invoice_payment
+b2,2025-11-26,INV-001 payment - Mehta Traders,189262,credit,invoice_payment
+b2,2025-12-03,Rent - Factory Shed,60000,debit,rent
+b2,2025-12-04,Electricity and Utilities,25000,debit,electricity
+b2,2025-12-04,Salaries - Staff Payroll,220000,debit,salaries
+b2,2025-12-05,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2025-12-08,INV-008 payment - Karnataka Motors,198388,credit,invoice_payment
+b2,2025-12-15,INV-011 payment - Sri Venkateshwara Garage,153717,credit,invoice_payment
+b2,2025-12-16,INV-009 payment - Mysore Bearings Co,128404,credit,invoice_payment
+b2,2025-12-20,INV-012 payment - Deccan Auto Spares,150885,credit,invoice_payment
+b2,2026-01-02,Electricity and Utilities,25000,debit,electricity
+b2,2026-01-04,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-01-05,Rent - Factory Shed,60000,debit,rent
+b2,2026-01-05,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-01-08,INV-014 payment - Mysore Bearings Co,113832,credit,invoice_payment
+b2,2026-01-10,INV-006 payment - Mehta Traders,170850,credit,invoice_payment
+b2,2026-01-10,INV-013 payment - Karnataka Motors,152177,credit,invoice_payment
+b2,2026-01-17,INV-015 payment - Sri Venkateshwara Garage,191563,credit,invoice_payment
+b2,2026-01-19,INV-017 payment - Deccan Auto Spares,130796,credit,invoice_payment
+b2,2026-01-21,INV-010 payment - Mehta Traders,199766,credit,invoice_payment
+b2,2026-02-02,Rent - Factory Shed,60000,debit,rent
+b2,2026-02-03,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-02-04,Electricity and Utilities,25000,debit,electricity
+b2,2026-02-04,INV-018 payment - Karnataka Motors,144449,credit,invoice_payment
+b2,2026-02-04,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-02-07,INV-020 payment - Mysore Bearings Co,145098,credit,invoice_payment
+b2,2026-02-17,INV-019 payment - Sri Venkateshwara Garage,155773,credit,invoice_payment
+b2,2026-02-19,INV-022 payment - Deccan Auto Spares,144141,credit,invoice_payment
+b2,2026-02-22,INV-016 payment - Mehta Traders,159966,credit,invoice_payment
+b2,2026-03-01,Rent - Factory Shed,60000,debit,rent
+b2,2026-03-03,Electricity and Utilities,25000,debit,electricity
+b2,2026-03-04,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-03-04,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-03-13,INV-023 payment - Karnataka Motors,146952,credit,invoice_payment
+b2,2026-03-15,INV-024 payment - Sri Venkateshwara Garage,134524,credit,invoice_payment
+b2,2026-03-20,INV-025 payment - Mysore Bearings Co,114507,credit,invoice_payment
+b2,2026-03-28,INV-027 payment - Deccan Auto Spares,98999,credit,invoice_payment
+b2,2026-04-02,Electricity and Utilities,25000,debit,electricity
+b2,2026-04-02,Rent - Factory Shed,60000,debit,rent
+b2,2026-04-04,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-04-05,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-04-11,INV-028 payment - Karnataka Motors,116213,credit,invoice_payment
+b2,2026-04-11,INV-031 payment - Mysore Bearings Co,138036,credit,invoice_payment
+b2,2026-04-13,INV-021 payment - Mehta Traders,192064,credit,invoice_payment
+b2,2026-04-17,INV-029 payment - Sri Venkateshwara Garage,149117,credit,invoice_payment
+b2,2026-04-21,INV-032 payment - Deccan Auto Spares,128463,credit,invoice_payment
+b2,2026-05-01,INV-026 payment - Mehta Traders,185566,credit,invoice_payment
+b2,2026-05-01,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-05-04,Electricity and Utilities,25000,debit,electricity
+b2,2026-05-05,Rent - Factory Shed,60000,debit,rent
+b2,2026-05-05,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-05-17,INV-033 payment - Karnataka Motors,120533,credit,invoice_payment
+b2,2026-05-18,INV-035 payment - Sri Venkateshwara Garage,155044,credit,invoice_payment
+b2,2026-05-21,INV-037 payment - Deccan Auto Spares,166692,credit,invoice_payment
+b2,2026-05-25,INV-030 payment - Mehta Traders,237678,credit,invoice_payment
+b2,2026-06-01,Electricity and Utilities,25000,debit,electricity
+b2,2026-06-01,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-06-04,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-06-05,Rent - Factory Shed,60000,debit,rent
+b2,2026-06-14,INV-039 payment - Mysore Bearings Co,136190,credit,invoice_payment
+b2,2026-06-22,INV-042 payment - Deccan Auto Spares,129398,credit,invoice_payment
+b2,2026-06-25,INV-041 payment - Sri Venkateshwara Garage,150436,credit,invoice_payment
+b2,2026-07-01,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-07-02,Electricity and Utilities,25000,debit,electricity
+b2,2026-07-02,INV-036 payment - Mehta Traders,205371,credit,invoice_payment
+b2,2026-07-02,Rent - Factory Shed,60000,debit,rent
+b2,2026-07-04,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-07-09,INV-043 payment - Karnataka Motors,140630,credit,invoice_payment
+b2,2026-07-17,INV-047 payment - Sri Venkateshwara Garage,110588,credit,invoice_payment
+b2,2026-07-23,INV-046 payment - Deccan Auto Spares,144129,credit,invoice_payment
+b2,2026-07-26,INV-040 payment - Mehta Traders,174932,credit,invoice_payment
+b2,2026-08-02,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-08-03,Electricity and Utilities,25000,debit,electricity
+b2,2026-08-03,Rent - Factory Shed,60000,debit,rent
+b2,2026-08-04,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-08-05,INV-048 payment - Karnataka Motors,193597,credit,invoice_payment
+b2,2026-08-17,INV-050 payment - Mysore Bearings Co,134325,credit,invoice_payment
+b2,2026-08-17,INV-051 payment - Sri Venkateshwara Garage,155165,credit,invoice_payment
+b2,2026-08-17,INV-052 payment - Deccan Auto Spares,121504,credit,invoice_payment
+b2,2026-08-20,INV-045 payment - Mehta Traders,189410,credit,invoice_payment
+b2,2026-09-02,INV-053 payment - Karnataka Motors,163630,credit,invoice_payment
+b2,2026-09-03,Electricity and Utilities,25000,debit,electricity
+b2,2026-09-03,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-09-04,Rent - Factory Shed,60000,debit,rent
+b2,2026-09-04,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-09-13,INV-055 payment - Mysore Bearings Co,107075,credit,invoice_payment
+b2,2026-09-14,INV-056 payment - Sri Venkateshwara Garage,131436,credit,invoice_payment
+b2,2026-09-17,INV-057 payment - Deccan Auto Spares,152127,credit,invoice_payment
+b2,2026-09-30,INV-049 payment - Mehta Traders,203114,credit,invoice_payment
+b2,2026-10-01,Supplier purchase - Bharat Steel Traders,380000,debit,supplier purchase
+b2,2026-10-03,Electricity and Utilities,25000,debit,electricity
+b2,2026-10-03,Rent - Factory Shed,60000,debit,rent
+b2,2026-10-04,Salaries - Staff Payroll,220000,debit,salaries
+b2,2026-10-05,INV-058 payment - Karnataka Motors,194832,credit,invoice_payment
+b2,2026-10-11,INV-060 payment - Mysore Bearings Co,137128,credit,invoice_payment
+b2,2026-10-15,INV-061 payment - Sri Venkateshwara Garage,135061,credit,invoice_payment
+b2,2026-10-20,INV-062 payment - Deccan Auto Spares,123788,credit,invoice_payment
+b3,2025-10-25,INV-001 payment - Udupi Fresh Dairy,62679,credit,invoice_payment
+b3,2025-11-01,Rent - Shop Premises,35000,debit,rent
+b3,2025-11-02,Salaries - Staff Payroll,90000,debit,salaries
+b3,2025-11-04,Electricity and Utilities,22000,debit,electricity
+b3,2025-11-05,INV-004 payment - Hotel Mayura,75536,credit,invoice_payment
+b3,2025-11-05,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2025-11-06,INV-003 payment - Brigade Catering,71410,credit,invoice_payment
+b3,2025-11-07,INV-002 payment - Udupi Fresh Dairy,42405,credit,invoice_payment
+b3,2025-11-19,INV-006 payment - Cafe Filter Kaapi,61933,credit,invoice_payment
+b3,2025-11-27,INV-005 payment - Udupi Fresh Dairy,51501,credit,invoice_payment
+b3,2025-11-28,INV-008 payment - Brigade Catering,61158,credit,invoice_payment
+b3,2025-12-02,Electricity and Utilities,22000,debit,electricity
+b3,2025-12-03,Salaries - Staff Payroll,90000,debit,salaries
+b3,2025-12-04,Rent - Shop Premises,35000,debit,rent
+b3,2025-12-05,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2025-12-08,INV-009 payment - Hotel Mayura,88588,credit,invoice_payment
+b3,2025-12-13,INV-007 payment - Udupi Fresh Dairy,67633,credit,invoice_payment
+b3,2025-12-20,INV-011 payment - Cafe Filter Kaapi,44541,credit,invoice_payment
+b3,2025-12-31,INV-010 payment - Udupi Fresh Dairy,57403,credit,invoice_payment
+b3,2026-01-01,Electricity and Utilities,22000,debit,electricity
+b3,2026-01-01,INV-014 payment - Hotel Mayura,67594,credit,invoice_payment
+b3,2026-01-04,Rent - Shop Premises,35000,debit,rent
+b3,2026-01-04,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-01-04,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-01-06,INV-013 payment - Udupi Fresh Dairy,55660,credit,invoice_payment
+b3,2026-01-06,INV-016 payment - Cafe Filter Kaapi,45748,credit,invoice_payment
+b3,2026-01-09,INV-012 payment - Brigade Catering,63194,credit,invoice_payment
+b3,2026-01-21,INV-018 payment - Brigade Catering,53401,credit,invoice_payment
+b3,2026-01-29,INV-019 payment - Hotel Mayura,73170,credit,invoice_payment
+b3,2026-02-03,Electricity and Utilities,22000,debit,electricity
+b3,2026-02-03,Rent - Shop Premises,35000,debit,rent
+b3,2026-02-03,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-02-04,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-02-05,INV-015 payment - Udupi Fresh Dairy,57410,credit,invoice_payment
+b3,2026-02-09,INV-017 payment - Udupi Fresh Dairy,59242,credit,invoice_payment
+b3,2026-02-17,INV-021 payment - Cafe Filter Kaapi,39355,credit,invoice_payment
+b3,2026-02-23,INV-022 payment - Udupi Fresh Dairy,46828,credit,invoice_payment
+b3,2026-03-01,INV-020 payment - Udupi Fresh Dairy,55925,credit,invoice_payment
+b3,2026-03-01,Rent - Shop Premises,35000,debit,rent
+b3,2026-03-02,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-03-03,Electricity and Utilities,22000,debit,electricity
+b3,2026-03-04,INV-024 payment - Hotel Mayura,61077,credit,invoice_payment
+b3,2026-03-04,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-03-05,INV-025 payment - Udupi Fresh Dairy,36806,credit,invoice_payment
+b3,2026-03-06,INV-023 payment - Brigade Catering,51770,credit,invoice_payment
+b3,2026-03-18,INV-026 payment - Cafe Filter Kaapi,52311,credit,invoice_payment
+b3,2026-04-03,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-04-04,Electricity and Utilities,22000,debit,electricity
+b3,2026-04-04,Rent - Shop Premises,35000,debit,rent
+b3,2026-04-05,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-04-07,INV-029 payment - Hotel Mayura,81107,credit,invoice_payment
+b3,2026-04-11,INV-028 payment - Brigade Catering,61441,credit,invoice_payment
+b3,2026-04-14,INV-027 payment - Udupi Fresh Dairy,67401,credit,invoice_payment
+b3,2026-04-16,INV-031 payment - Cafe Filter Kaapi,41841,credit,invoice_payment
+b3,2026-04-24,INV-030 payment - Udupi Fresh Dairy,47931,credit,invoice_payment
+b3,2026-05-01,Electricity and Utilities,22000,debit,electricity
+b3,2026-05-01,Rent - Shop Premises,35000,debit,rent
+b3,2026-05-03,INV-034 payment - Hotel Mayura,88593,credit,invoice_payment
+b3,2026-05-03,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-05-04,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-05-08,INV-033 payment - Udupi Fresh Dairy,53489,credit,invoice_payment
+b3,2026-05-10,INV-032 payment - Brigade Catering,75453,credit,invoice_payment
+b3,2026-05-18,INV-036 payment - Cafe Filter Kaapi,57211,credit,invoice_payment
+b3,2026-05-20,INV-035 payment - Udupi Fresh Dairy,57688,credit,invoice_payment
+b3,2026-05-30,INV-037 payment - Brigade Catering,59098,credit,invoice_payment
+b3,2026-06-01,Electricity and Utilities,22000,debit,electricity
+b3,2026-06-03,Rent - Shop Premises,35000,debit,rent
+b3,2026-06-03,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-06-04,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-06-11,INV-039 payment - Hotel Mayura,88759,credit,invoice_payment
+b3,2026-06-15,INV-038 payment - Udupi Fresh Dairy,60596,credit,invoice_payment
+b3,2026-06-21,INV-041 payment - Cafe Filter Kaapi,47259,credit,invoice_payment
+b3,2026-06-22,INV-042 payment - Brigade Catering,73524,credit,invoice_payment
+b3,2026-07-01,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-07-03,INV-044 payment - Hotel Mayura,50648,credit,invoice_payment
+b3,2026-07-04,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-07-05,Electricity and Utilities,22000,debit,electricity
+b3,2026-07-05,INV-043 payment - Udupi Fresh Dairy,52575,credit,invoice_payment
+b3,2026-07-05,Rent - Shop Premises,35000,debit,rent
+b3,2026-07-10,INV-040 payment - Udupi Fresh Dairy,71280,credit,invoice_payment
+b3,2026-07-20,INV-048 payment - Hotel Mayura,36341,credit,invoice_payment
+b3,2026-07-24,INV-046 payment - Cafe Filter Kaapi,29807,credit,invoice_payment
+b3,2026-07-24,INV-047 payment - Brigade Catering,30544,credit,invoice_payment
+b3,2026-08-01,INV-045 payment - Udupi Fresh Dairy,35262,credit,invoice_payment
+b3,2026-08-01,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-08-02,Electricity and Utilities,22000,debit,electricity
+b3,2026-08-04,Rent - Shop Premises,35000,debit,rent
+b3,2026-08-05,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-08-13,INV-049 payment - Udupi Fresh Dairy,31226,credit,invoice_payment
+b3,2026-08-23,INV-052 payment - Brigade Catering,40655,credit,invoice_payment
+b3,2026-08-26,INV-050 payment - Udupi Fresh Dairy,44383,credit,invoice_payment
+b3,2026-09-03,INV-051 payment - Cafe Filter Kaapi,33376,credit,invoice_payment
+b3,2026-09-03,INV-053 payment - Hotel Mayura,49895,credit,invoice_payment
+b3,2026-09-03,Rent - Shop Premises,35000,debit,rent
+b3,2026-09-04,Electricity and Utilities,22000,debit,electricity
+b3,2026-09-04,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-09-05,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-09-08,INV-054 payment - Udupi Fresh Dairy,40651,credit,invoice_payment
+b3,2026-09-14,INV-055 payment - Udupi Fresh Dairy,55455,credit,invoice_payment
+b3,2026-09-21,INV-056 payment - Cafe Filter Kaapi,48675,credit,invoice_payment
+b3,2026-10-01,Rent - Shop Premises,35000,debit,rent
+b3,2026-10-02,Salaries - Staff Payroll,90000,debit,salaries
+b3,2026-10-03,Electricity and Utilities,22000,debit,electricity
+b3,2026-10-05,Supplier purchase - Nandini Dairy and Flour,130000,debit,supplier purchase
+b3,2026-10-08,INV-058 payment - Brigade Catering,72214,credit,invoice_payment
+b3,2026-10-15,INV-059 payment - Hotel Mayura,75987,credit,invoice_payment
+b3,2026-10-16,INV-063 payment - Cafe Filter Kaapi,52458,credit,invoice_payment
+b3,2026-10-17,INV-062 payment - Udupi Fresh Dairy,60526,credit,invoice_payment
