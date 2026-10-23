@@ -1,6 +1,18 @@
-// The ONE place for the API address and the mock toggle.
+// The ONE place for the API address and the mock/live switches.
 export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
-// true  = use JSON files in src/mock (works with no backend)
-// false = call Shria's real FastAPI endpoints
-export const USE_MOCK = true;
+// true = use src/mock data (no backend needed), false = call Shria's live endpoint.
+// Flip each one to false only after Shria confirms that endpoint works.
+export const MOCK = {
+    businesses: true,
+    summary: true,
+    forecast: true,
+    loanSimulate: true,
+    latePayers: true,
+    inconsistencies: true,
+    overdue: true,
+    actionsSimulate: true,
+    stress: true,
+    explain: true,
+    reminders: true,
+};
