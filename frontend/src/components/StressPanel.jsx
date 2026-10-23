@@ -8,6 +8,14 @@ const firstNegative = (f) => {
     return i === -1 ? "none in 90 days" : f.dates[i];
 };
 
+// Shria's definition: first day with ANY chance of going negative.
+// Returns null when the data has no negative_probability (the mock may not).
+const firstRisk = (f) => {
+    if (!f?.negative_probability) return null;
+    const i = f.negative_probability.findIndex((p) => p >= 0.2);
+    return i === -1 ? "none in 90 days" : f.dates[i];
+};
+
 export default function StressPanel({ id, forecast }) {
     const [drop, setDrop] = useState(0);
     const [delay, setDelay] = useState(0);
@@ -28,6 +36,7 @@ export default function StressPanel({ id, forecast }) {
     }, [id, drop, delay, active]);
 
     const shown = active && stress ? stress : null;
+    const risk = shown ? firstRisk(shown) : null;
 
     return (
         <div>
@@ -43,12 +52,15 @@ export default function StressPanel({ id, forecast }) {
                     <input type="range" min="0" max="60" step="5" value={delay} onChange={(e) => setDelay(Number(e.target.value))} />
                 </label>
             </div>
-            {error && <p>{error}</p>}
+            {active && error && <p role="alert">{error}</p>}
             <ForecastChart forecast={forecast} stress={shown} />
             <p>
                 Expected balance first goes below zero: {firstNegative(forecast)}
                 {shown ? ` (baseline), ${firstNegative(shown)} (stressed)` : ""}
             </p>
+            {risk && (
+                <p>First day with any chance of a shortfall (stressed): {risk}</p>
+            )}
         </div>
     );
 }

@@ -21,6 +21,8 @@ export default function Layout() {
                 <nav className="nav">
                     <NavLink to="/" end>Dashboard</NavLink>
                     <NavLink to="/loan">Loan Simulator</NavLink>
+                    <NavLink to="/inconsistencies">Inconsistencies</NavLink>
+                    <NavLink to="/overdue">Overdue</NavLink>
                 </nav>
                 <span className="spacer" />
                 {usingMock && <span className="badge mock">Demo mode: some data is mock</span>}
