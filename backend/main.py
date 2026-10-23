@@ -86,3 +86,8 @@ def overdue_invoices(business_id: str):
                     "days_overdue": days,
                 })
     return result
+
+@app.get("/businesses/{business_id}/inconsistencies")
+def inconsistencies(business_id: str):
+    business, transactions, invoices, obligations = load(business_id)
+    return analytics_bridge.find_inconsistencies(transactions, invoices)
