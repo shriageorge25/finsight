@@ -83,7 +83,7 @@ def _credit_pattern(inv_id):
 def find_inconsistencies(transactions, invoices):
     """[{invoice_id, issue, reason, severity}] using the three agreed labels."""
     findings = []
-        credits = [(str(t.get("description", "")), float(t.get("amount", 0)))
+    credits = [(str(t.get("description", "")), float(t.get("amount", 0)))
                for t in transactions if t.get("type") == "credit"]
 
     # 1) Marked paid but no credit transaction mentions the invoice id
@@ -93,7 +93,7 @@ def find_inconsistencies(transactions, invoices):
             continue
         pattern = _credit_pattern(inv_id)
         if not any(pattern.search(text) for text, amt in credits
-            if abs(amt - float(inv["amount"])) < 0.01):
+                   if abs(amt - float(inv["amount"])) < 0.01):
             findings.append({
                 "invoice_id": inv_id,
                 "issue": ISSUE_NO_DEPOSIT,
