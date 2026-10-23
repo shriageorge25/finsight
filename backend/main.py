@@ -1,3 +1,4 @@
+from datetime import date
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -68,3 +69,20 @@ def loan_simulate(business_id: str, req: LoanRequest):
 def late_payers(business_id: str):
     business, transactions, invoices, obligations = load(business_id)
     return analytics_bridge.get_late_payers(invoices)
+
+@app.get("/businesses/{business_id}/overdue-invoices")
+def overdue_invoices(business_id: str):
+    business, transactions, invoices, obligations = load(business_id)
+    as_of = date.fromisoformat(business["as_of_date"])
+    result = []
+    for inv in invoices:
+        if inv.get("paid_date") is None:
+            days = (as_of - date.fromisoformat(inv["due_date"])).days
+            if days > 0:
+                result.append({
+                    "invoice_id": inv.get("invoice_id") or inv["_id"],
+                    "customer": inv["customer"],
+                    "amount": inv["amount"],
+                    "days_overdue": days,
+                })
+    return result
