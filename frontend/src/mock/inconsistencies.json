@@ -19,7 +19,7 @@
             "invoice_id": "inv_77",
             "issue": "Possible duplicate invoice",
             "reason": "Two invoices to Udupi Fresh Dairy for Rs 18,000 on the same date",
-            "severity": "medium"
+            "severity": "high"
         },
         {
             "invoice_id": "inv_80",
