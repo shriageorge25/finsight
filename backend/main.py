@@ -112,3 +112,18 @@ def overdue_invoices(business_id: str):
 def inconsistencies(business_id: str):
     business, transactions, invoices, obligations = load(business_id)
     return analytics_bridge.find_inconsistencies(transactions, invoices)
+
+class StressRequest(BaseModel):
+    revenue_drop_pct: float = Field(0, ge=0, le=100)
+    delay_days: int = Field(0, ge=0, le=365)
+
+
+@app.post("/businesses/{business_id}/stress")
+def stress(business_id: str, req: StressRequest):
+    business, transactions, invoices, obligations = load(business_id)
+    factor = 1 - req.revenue_drop_pct / 100
+    scaled = [{**inv, "amount": inv["amount"] * factor} for inv in invoices]
+    return fc.simulate(
+        business, transactions, scaled, obligations,
+        delay_shift=req.delay_days,
+    )
