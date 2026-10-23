@@ -156,3 +156,42 @@ def actions_simulate(business_id: str, req: ActionRequest):
     else:
         pct = max(0, min(100, round(100 * (before_gap - after_gap) / before_gap)))
     return {"gap_closed_pct": pct, "forecast_after": after}
+
+from statements import router as statements_router
+app.include_router(statements_router)
+
+import explain
+
+
+@app.get("/businesses/{business_id}/explain")
+def explain_business(business_id: str):
+    summary = get_summary(business_id)
+    try:
+        text = explain.explain_summary(summary)
+    except Exception:
+        raise HTTPException(status_code=503, detail="The explanation service is unavailable")
+    if not text:
+        raise HTTPException(status_code=503, detail="The explanation service returned nothing")
+    return {"summary": text}
+
+import reminders
+
+
+class ReminderRequest(BaseModel):
+    customer: str = Field(min_length=1, max_length=100)
+
+
+@app.post("/businesses/{business_id}/reminders")
+def reminders_draft(business_id: str, req: ReminderRequest):
+    business = load(business_id)[0]
+    wanted = req.customer.strip().lower()
+    mine = [i for i in overdue_invoices(business_id) if i["customer"].strip().lower() == wanted]
+    if not mine:
+        raise HTTPException(status_code=404, detail="No overdue invoices for this customer")
+    try:
+        text = reminders.draft_reminder(business, mine[0]["customer"], mine)
+    except Exception:
+        raise HTTPException(status_code=503, detail="The reminder service is unavailable")
+    if not text:
+        raise HTTPException(status_code=503, detail="The reminder service returned nothing")
+    return {"message": text}
