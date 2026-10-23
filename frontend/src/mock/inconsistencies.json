@@ -1,0 +1,31 @@
+{
+    "b1": [],
+    "b2": [
+        {
+            "invoice_id": "inv_41",
+            "issue": "Marked paid, no matching bank deposit",
+            "reason": "Invoice of Rs 85,000 marked paid on 3 Aug but no matching credit found in the bank statement",
+            "severity": "high"
+        },
+        {
+            "invoice_id": "inv_42",
+            "issue": "Marked paid, no matching bank deposit",
+            "reason": "Invoice of Rs 62,000 marked paid on 19 Aug but no matching credit found in the bank statement",
+            "severity": "high"
+        }
+    ],
+    "b3": [
+        {
+            "invoice_id": "inv_77",
+            "issue": "Possible duplicate invoice",
+            "reason": "Two invoices to Udupi Fresh Dairy for Rs 18,000 on the same date",
+            "severity": "medium"
+        },
+        {
+            "invoice_id": "inv_80",
+            "issue": "Suspicious round-number entry",
+            "reason": "Invoice of exactly Rs 1,00,000 stands out against normal amounts",
+            "severity": "low"
+        }
+    ]
+}

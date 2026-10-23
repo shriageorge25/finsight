@@ -1,0 +1,58 @@
+{
+    "b1": {
+        "balance": 1240000,
+        "health_score": 82,
+        "score_components": {
+            "liquidity": 38,
+            "collections": 20,
+            "concentration": 10,
+            "data_integrity": 10,
+            "buffer": 4
+        },
+        "warnings": []
+    },
+    "b2": {
+        "balance": 640000,
+        "health_score": 50,
+        "score_components": {
+            "liquidity": 22,
+            "collections": 12,
+            "concentration": 6,
+            "data_integrity": 6,
+            "buffer": 4
+        },
+        "warnings": [
+            {
+                "type": "liquidity_gap",
+                "severity": "high",
+                "week": "2026-11-18",
+                "reason": "Cash may run out around 2026-11-18; worst case short by ₹2,10,000."
+            },
+            {
+                "type": "customer_concentration",
+                "severity": "medium",
+                "week": null,
+                "reason": "Mehta Traders pays about 41 days late and holds a large share of receivables."
+            }
+        ]
+    },
+    "b3": {
+        "balance": 85000,
+        "health_score": 31,
+        "score_components": {
+            "liquidity": 8,
+            "collections": 8,
+            "concentration": 5,
+            "data_integrity": 6,
+            "buffer": 4
+        },
+        "warnings": [
+            {
+                "type": "liquidity_gap",
+                "severity": "high",
+                "week": "2026-11-02",
+                "reason": "Cash may run out around 2026-11-02; worst case short by ₹60,000."
+            }
+        ]
+    }
+}

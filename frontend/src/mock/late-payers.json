@@ -1,0 +1,17 @@
+{
+    "b1": [],
+    "b2": [
+        {
+            "customer": "Mehta Traders",
+            "avg_delay_days": 41,
+            "amount_at_risk": 320000
+        }
+    ],
+    "b3": [
+        {
+            "customer": "Udupi Fresh Dairy",
+            "avg_delay_days": 22,
+            "amount_at_risk": 96000
+        }
+    ]
+}
