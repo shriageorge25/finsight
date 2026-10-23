@@ -68,6 +68,17 @@ def get_late_payers(invoices):
     result.sort(key=lambda r: r["amount_at_risk"], reverse=True)
     return result
 
+def _credit_pattern(inv_id):
+    """Match the invoice id itself OR its bank-label form (inv_34 -> INV-034)."""
+    alternatives = [re.escape(inv_id)]
+    digits = re.findall(r"\d+", inv_id)
+    if digits:
+        n = int(digits[-1])
+        alternatives.append(r"INV[-_ ]?0*" + str(n))
+    return re.compile(
+        r"(?<![A-Za-z0-9])(?:" + "|".join(alternatives) + r")(?![A-Za-z0-9])",
+        re.IGNORECASE,
+    )
 
 def find_inconsistencies(transactions, invoices):
     """[{invoice_id, issue, reason, severity}] using the three agreed labels."""
@@ -80,7 +91,7 @@ def find_inconsistencies(transactions, invoices):
         inv_id = _invoice_id(inv)
         if inv_id is None or _to_date(inv.get("paid_date")) is None:
             continue
-        pattern = re.compile(r"(?<![A-Za-z0-9])" + re.escape(inv_id) + r"(?![A-Za-z0-9])")
+        pattern = _credit_pattern(inv_id)
         if not any(pattern.search(text) for text in credit_text):
             findings.append({
                 "invoice_id": inv_id,
