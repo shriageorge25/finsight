@@ -144,3 +144,13 @@ find_inconsistencies(transactions, invoices) -> [{"invoice_id", "issue", "reason
 - Loan proceeds are treated as invested in the business, not held as cash. Only EMIs reduce cash.
 - Cash inflows come from invoices only. Recurring costs are inferred from history.
 - Data is synthetic. Not financial advice.
+### Contract clarifications
+- `inconsistencies.issue` is one of: "Marked paid, no matching bank deposit" (high),
+  "Possible duplicate invoice" (high), "Suspicious round-number entry" (low).
+  `reason` is the specific sentence for that invoice.
+- `score_components` are integer points earned. Maximums: liquidity 40, collections 25,
+  concentration 15, data_integrity 10, buffer 10. `health_score` = sum of the five.
+- Every credit transaction is the payment of one invoice: amount = invoice amount,
+  date = paid_date, description contains the invoice id (e.g. "INV-004 payment - Kaveri Retail").
+- /loan-simulate when affordable: first_shortfall_date = null, shortfall_amount = 0.
+  baseline_first_shortfall_date = null when the baseline has no shortfall.
