@@ -43,7 +43,7 @@ Current balance = opening + credits - debits up to as_of_date.
 transactions
 `{business_id, date, description, amount, type:"credit"|"debit", category}`
 invoices
-`{_id:"inv_1", business_id, customer, amount, issue_date, due_date, paid_date: "YYYY-MM-DD" | null}`
+`{_id:"b2_inv_1", invoice_id:"inv_1", business_id, customer, amount, issue_date, due_date, paid_date: "YYYY-MM-DD" | null}`
 obligations (one-off future payments, e.g. a GST payment)
 `{business_id, description, amount, due_date}`
 Do not ALSO include these as recurring debits in transactions, or they are counted twice.
