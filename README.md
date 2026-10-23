@@ -138,11 +138,9 @@ Delay = paid_date minus due_date in days, PAID invoices only. Negative means ear
 "Possible duplicate invoice" (high), "Suspicious round-number entry" (low).
 `reason` is the specific sentence for that invoice.
 Detection rules (so judges get one consistent answer):
-Marked paid, no matching bank deposit: paid_date is set but no credit transaction whose
-description contains the invoice id and whose amount equals the invoice amount.
+Marked paid, no matching bank deposit: paid_date is set but, within the same business, no credit transaction has a description containing the invoice number (inv_34 matches "INV-034", zero-padding ignored) and an amount equal to the invoice amount.
 Possible duplicate invoice: same customer, amount and issue_date as another invoice.
-Suspicious round-number entry: Sudiksha to write the exact rule here, for example the
-amount threshold and multiple.
+Suspicious round-number entry: an invoice whose amount is an exact multiple of 10,000 and at least 50,000. Example: b3 inv_57, amount 100000. (Team choice, not in the original spec.)
 Health score (backend/scoring.py, formula-based)
 `health_score` = sum of five integer components. Status: healthy >= 70, watch >= 45, else at_risk.
 Component	Max	Formula
