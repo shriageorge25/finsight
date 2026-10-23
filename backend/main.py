@@ -156,3 +156,6 @@ def actions_simulate(business_id: str, req: ActionRequest):
     else:
         pct = max(0, min(100, round(100 * (before_gap - after_gap) / before_gap)))
     return {"gap_closed_pct": pct, "forecast_after": after}
+
+from statements import router as statements_router
+app.include_router(statements_router)
