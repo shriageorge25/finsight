@@ -56,7 +56,7 @@ def compute_summary(business, transactions, invoices, obligations, forecast):
         warnings.append({
             "type": "liquidity_gap",
             "severity": "high" if p >= 0.5 else "medium",
-            "week": idx // 7 + 1,
+            "week": risk_day,
             "reason": f"Cash has a {p:.0%} chance of going negative on {risk_day} (week {idx // 7 + 1}).",
         })
     if overdue_total > 0:
