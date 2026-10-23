@@ -63,3 +63,8 @@ def loan_simulate(business_id: str, req: LoanRequest):
         annual_rate_pct=req.rate,
         tenure_months=req.tenure_months,
     )
+
+@app.get("/businesses/{business_id}/late-payers")
+def late_payers(business_id: str):
+    business, transactions, invoices, obligations = load(business_id)
+    return analytics_bridge.get_late_payers(invoices)
