@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Dashboard from "./components/Dashboard";
 import StateBox from "./components/StateBox";
 import Inconsistencies from "./components/Inconsistencies";
+import Overdue from "./components/Overdue";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/loan" element={<StateBox kind="empty" message="Loan simulator comes next." />} />
           <Route path="*" element={<StateBox kind="empty" message="Page not found." />} />
           <Route path="/inconsistencies" element={<Inconsistencies />} />
+          <Route path="/overdue" element={<Overdue />} />
         </Route>
       </Routes>
     </BusinessProvider>
