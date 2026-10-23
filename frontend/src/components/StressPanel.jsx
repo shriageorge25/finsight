@@ -12,7 +12,7 @@ const firstNegative = (f) => {
 // Returns null when the data has no negative_probability (the mock may not).
 const firstRisk = (f) => {
     if (!f?.negative_probability) return null;
-    const i = f.negative_probability.findIndex((p) => p > 0);
+    const i = f.negative_probability.findIndex((p) => p >= 0.2);
     return i === -1 ? "none in 90 days" : f.dates[i];
 };
 
