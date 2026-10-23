@@ -1,0 +1,31 @@
+{
+    "b1": [],
+    "b2": [
+        {
+            "invoice_id": "inv_52",
+            "customer": "Mehta Traders",
+            "amount": 120000,
+            "days_overdue": 23
+        },
+        {
+            "invoice_id": "inv_53",
+            "customer": "Mehta Traders",
+            "amount": 200000,
+            "days_overdue": 9
+        }
+    ],
+    "b3": [
+        {
+            "invoice_id": "inv_70",
+            "customer": "Udupi Fresh Dairy",
+            "amount": 56000,
+            "days_overdue": 15
+        },
+        {
+            "invoice_id": "inv_71",
+            "customer": "Hotel Mayura",
+            "amount": 40000,
+            "days_overdue": 31
+        }
+    ]
+}

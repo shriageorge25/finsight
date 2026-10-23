@@ -1,0 +1,11 @@
+{
+    "b1": {
+        "summary": "[MOCK] Cash is comfortable and customers pay close to their due dates. No shortfall is expected in the next 90 days."
+    },
+    "b2": {
+        "summary": "[MOCK] Revenue looks strong, but one large customer pays about 41 days late and a big supplier payment is due soon. Cash may turn negative in mid-November."
+    },
+    "b3": {
+        "summary": "[MOCK] Margins are thin and several invoices are overdue. Cash is already close to zero and a shortfall is likely within weeks."
+    }
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "id": "b1",
+        "name": "Sharma Textiles",
+        "sector": "Retail",
+        "status": "healthy"
+    },
+    {
+        "id": "b2",
+        "name": "Kaveri Auto Parts",
+        "sector": "Manufacturing",
+        "status": "watch"
+    },
+    {
+        "id": "b3",
+        "name": "Bengaluru Bakery Co",
+        "sector": "Food & Beverage",
+        "status": "at_risk"
+    }
+]
