@@ -3,18 +3,18 @@ import { api, errorMessage } from "../api/api";
 import { useBusiness } from "../context/business";
 import { inr, scoreTone } from "../utils/format";
 import StateBox from "./StateBox";
+import StressPanel from "./StressPanel";
 
 export default function Dashboard() {
     const { selected, selectedId } = useBusiness();
-    const [result, setResult] = useState({ id: null, summary: null, error: "" });
+    const [result, setResult] = useState({ id: null, summary: null, forecast: null, error: "" });
 
     useEffect(() => {
         if (!selectedId) return;
         let cancelled = false;
-        api
-            .summary(selectedId)
-            .then((summary) => { if (!cancelled) setResult({ id: selectedId, summary, error: "" }); })
-            .catch((e) => { if (!cancelled) setResult({ id: selectedId, summary: null, error: errorMessage(e) }); });
+        Promise.all([api.summary(selectedId), api.forecast(selectedId)])
+            .then(([summary, forecast]) => { if (!cancelled) setResult({ id: selectedId, summary, forecast, error: "" }); })
+            .catch((e) => { if (!cancelled) setResult({ id: selectedId, summary: null, forecast: null, error: errorMessage(e) }); });
         return () => { cancelled = true; };
     }, [selectedId]);
 
@@ -22,7 +22,7 @@ export default function Dashboard() {
     if (result.id !== selectedId) return <StateBox kind="loading" />;
     if (result.error) return <StateBox kind="error" message={result.error} />;
 
-    const { summary } = result;
+    const { summary, forecast } = result;
     return (
         <>
             <h1>{selected?.name}</h1>
@@ -43,12 +43,16 @@ export default function Dashboard() {
                 ) : (
                     summary.warnings.map((w, i) => (
                         <div key={i} className={`warning ${w.severity}`}>
-                            <strong>{w.week ?? "No specific date"}</strong>: {w.reason}
+                            <strong>{w.type.replace(/_/g, " ")}</strong>
+                            {w.week ? ` (from ${w.week})` : ""}: {w.reason}
                         </div>
                     ))
                 )}
             </div>
-            <StateBox kind="empty" message="Forecast chart goes here (built after the data generator)." />
+            <div className="card">
+                <h2>Cash forecast (90 days)</h2>
+                <StressPanel key={selectedId} id={selectedId} forecast={forecast} />
+            </div>
         </>
     );
 }

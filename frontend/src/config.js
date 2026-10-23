@@ -4,9 +4,9 @@ export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 // true = use src/mock data (no backend needed), false = call Shria's live endpoint.
 // Flip each one to false only after Shria confirms that endpoint works.
 export const MOCK = {
-    businesses: true,
-    summary: true,
-    forecast: true,
+    businesses: false,
+    summary: false,
+    forecast: false,
     loanSimulate: true,
     latePayers: true,
     inconsistencies: true,
