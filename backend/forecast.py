@@ -66,13 +66,14 @@ def _fixed_outflows(dates, recurring, obligations):
 
 
 def simulate(business, transactions, invoices, obligations,
-             days=90, n_sims=N_SIMS, seed=SEED):
+             days=90, n_sims=N_SIMS, seed=SEED, extra_outflows=None):
     """Return {dates, expected, low, high, negative_probability}, all the same length."""
     as_of = _d(business["as_of_date"])
     dates = [as_of + timedelta(days=i) for i in range(1, days + 1)]
     balance = current_balance(business, transactions)
     fixed = _fixed_outflows(dates, infer_recurring(transactions), obligations)
-
+    if extra_outflows is not None:  # e.g. loan EMIs: known amounts leaving on given days
+        fixed = fixed + np.asarray(extra_outflows, dtype=float)
     stats = customer_delay_stats(invoices)
     pooled = sorted(d for s in stats.values() for d in s["samples"]) or [0]
     unpaid = [inv for inv in invoices if not inv.get("paid_date")]
