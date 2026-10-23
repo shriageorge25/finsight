@@ -66,7 +66,8 @@ def _fixed_outflows(dates, recurring, obligations):
 
 
 def simulate(business, transactions, invoices, obligations,
-             days=90, n_sims=N_SIMS, seed=SEED, extra_outflows=None):
+             days=90, n_sims=N_SIMS, seed=SEED, extra_outflows=None,
+             delay_shift=0):
     """Return {dates, expected, low, high, negative_probability}, all the same length."""
     as_of = _d(business["as_of_date"])
     dates = [as_of + timedelta(days=i) for i in range(1, days + 1)]
@@ -94,6 +95,7 @@ def simulate(business, transactions, invoices, obligations,
         else:
             pool = np.sort(pool)
             delay = pool[(u[:, j] * len(pool)).astype(int)]
+        delay = delay + int(delay_shift)  # stress test: all payments this many days later
         offset = np.maximum(due_offset + delay, 1)  # earliest possible arrival: tomorrow
         ok = offset <= days
         np.add.at(inflow, (rows[ok], offset[ok] - 1), inv["amount"])
