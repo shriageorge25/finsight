@@ -4,6 +4,7 @@ import { useBusiness } from "../context/business";
 import { inr, scoreTone } from "../utils/format";
 import StateBox from "./StateBox";
 import StressPanel from "./StressPanel";
+import Explain from "./Explain";
 
 export default function Dashboard() {
     const { selected, selectedId } = useBusiness();
@@ -48,6 +49,9 @@ export default function Dashboard() {
                         </div>
                     ))
                 )}
+            </div>
+            <div className="card">
+                <Explain key={selectedId} id={selectedId} />
             </div>
             <div className="card">
                 <h2>Cash forecast (90 days)</h2>

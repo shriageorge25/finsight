@@ -13,6 +13,6 @@ export const MOCK = {
     overdue: false,
     actionsSimulate: true,
     stress: true,
-    explain: true,
-    reminders: true,
+    explain: false,
+    reminders: false,
 };
