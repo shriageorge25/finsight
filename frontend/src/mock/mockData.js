@@ -34,6 +34,28 @@ function firstNegative(f) {
     return i === -1 ? null : f.dates[i];
 }
 
+// Same shape as the real GET /businesses/{id}/invoices?unpaid=true.
+// b2 copies the real response. b1 and b3 are made-up demo rows (my choice, not from the backend).
+const UNPAID = {
+    b1: [
+        { invoice_id: "inv_demo_1", customer: "Jain Cloth House", amount: 120000, due_date: "2026-10-20", days_overdue: 4 },
+        { invoice_id: "inv_demo_2", customer: "Rao Retail Mart", amount: 95000, due_date: "2026-11-05", days_overdue: -12 },
+    ],
+    b2: [
+        { invoice_id: "inv_54", customer: "Mehta Traders", amount: 195617, due_date: "2026-09-12", days_overdue: 42 },
+        { invoice_id: "inv_59", customer: "Mehta Traders", amount: 176515, due_date: "2026-10-11", days_overdue: 13 },
+        { invoice_id: "inv_63", customer: "Karnataka Motors", amount: 188835, due_date: "2026-11-02", days_overdue: -9 },
+        { invoice_id: "inv_64", customer: "Mehta Traders", amount: 182315, due_date: "2026-11-11", days_overdue: -18 },
+        { invoice_id: "inv_65", customer: "Mysore Bearings Co", amount: 135361, due_date: "2026-11-13", days_overdue: -20 },
+        { invoice_id: "inv_66", customer: "Sri Venkateshwara Garage", amount: 136136, due_date: "2026-11-13", days_overdue: -20 },
+        { invoice_id: "inv_67", customer: "Deccan Auto Spares", amount: 164527, due_date: "2026-11-18", days_overdue: -25 },
+    ],
+    b3: [
+        { invoice_id: "inv_demo_3", customer: "Udupi Fresh Dairy", amount: 150000, due_date: "2026-10-10", days_overdue: 14 },
+        { invoice_id: "inv_demo_4", customer: "Demo Caterers", amount: 80000, due_date: "2026-11-08", days_overdue: -15 },
+    ],
+};
+
 export const mock = {
     businesses: () => businesses,
     summary: (id) => summary[id],
@@ -41,6 +63,7 @@ export const mock = {
     latePayers: (id) => latePayers[id],
     inconsistencies: (id) => inconsistencies[id],
     overdue: (id) => overdue[id],
+    unpaidInvoices: (id) => UNPAID[id],
     explain: (id) => explain[id],
 
     loanSimulate: (id, { amount, rate, tenure_months }) => {

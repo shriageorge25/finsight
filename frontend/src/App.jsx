@@ -7,6 +7,7 @@ import Inconsistencies from "./components/Inconsistencies";
 import Overdue from "./components/Overdue";
 import LoanSimulator from "./components/LoanSimulator";
 import LatePayers from "./components/LatePayers";
+import ActionsSimulator from "./components/ActionsSimulator";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/inconsistencies" element={<Inconsistencies />} />
           <Route path="/overdue" element={<Overdue />} />
           <Route path="/late-payers" element={<LatePayers />} />
+          <Route path="/actions" element={<ActionsSimulator />} />
         </Route>
       </Routes>
     </BusinessProvider>

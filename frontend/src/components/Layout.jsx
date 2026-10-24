@@ -24,6 +24,7 @@ export default function Layout() {
                     <NavLink to="/inconsistencies">Inconsistencies</NavLink>
                     <NavLink to="/overdue">Overdue</NavLink>
                     <NavLink to="/late-payers">Late payers</NavLink>
+                    <NavLink to="/actions">Actions</NavLink>
                 </nav>
                 <span className="spacer" />
                 {usingMock && <span className="badge mock">Demo mode: some data is mock</span>}

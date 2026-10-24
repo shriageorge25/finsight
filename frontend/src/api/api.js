@@ -29,6 +29,11 @@ export const api = {
     overdue: (id) =>
         MOCK.overdue ? fake(mock.overdue(id)) : get(`/businesses/${id}/overdue-invoices`),
 
+    unpaidInvoices: (id) =>
+        MOCK.unpaidInvoices
+            ? fake(mock.unpaidInvoices(id))
+            : get(`/businesses/${id}/invoices`, { unpaid: true }),
+
     actionsSimulate: (id, body) =>
         MOCK.actionsSimulate ? fake(mock.actionsSimulate(id, body)) : post(`/businesses/${id}/actions/simulate`, body),
 
