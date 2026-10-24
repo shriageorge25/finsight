@@ -79,7 +79,7 @@ def compute_summary(business, transactions, invoices, obligations, forecast):
             "type": "data_integrity",
             "severity": "high",
             "week": None,
-            "reason": f"{n_high} high-severity inconsistencies found in the records.",
+            "reason": f"{n_high} high-severity " + ("inconsistency" if n_high == 1 else "inconsistencies") + " found in the records.",
         })
 
     return {
