@@ -122,6 +122,16 @@ Request: `{"customer":"Mehta Traders"}`
 ```json
 {"message":"Hello Mehta Traders, a gentle reminder that ..."}
 ```
+POST /statements/parse
+Request: multipart/form-data with one field `file` (PDF only, max 5 MB). Not tied to a business id.
+```json
+{"filename":"statement.pdf","source":"local_pdf_parser","opening_balance":250000.0,"row_count":10,"total_debits":225900.0,"total_credits":230000.0,"rows":[],"balance_mismatches":[]}
+```
+Parses a bank statement PDF with pdfplumber (runs locally, no cloud service). Dates accepted: YYYY-MM-DD, DD/MM/YYYY, DD-MM-YYYY.
+Header words: Date, Description/Particulars/Narration, Debit/Withdrawal/Dr, Credit/Deposit/Cr, Balance.
+`balance_mismatches` lists rows whose balance does not follow from the previous balance.
+Errors: 400 not a PDF or not a valid PDF, 413 file over 5 MB, 422 PDF could not be read or no transaction rows found.
+Limits: text-based PDFs only (no scans, no wrapped descriptions). It does not save to S3 or MongoDB yet.
 Function contracts (written by Sudiksha, imported by Shria via analytics_bridge.py)
 Pure functions: no FastAPI, no database calls. They take lists of dicts and return lists or dicts.
 They must be importable as `from analytics import ...` (export them from backend/analytics/init.py).
