@@ -108,6 +108,25 @@ def overdue_invoices(business_id: str):
     return result
 
 
+@app.get("/businesses/{business_id}/invoices")
+def list_invoices(business_id: str, unpaid: bool = False):
+    business, transactions, invoices, obligations = load(business_id)
+    as_of = date.fromisoformat(business["as_of_date"])
+    result = []
+    for inv in invoices:
+        if unpaid and inv.get("paid_date"):
+            continue
+        result.append({
+            "invoice_id": inv.get("invoice_id") or inv["_id"],
+            "customer": inv["customer"],
+            "amount": inv["amount"],
+            "due_date": inv["due_date"],
+            "days_overdue": (as_of - date.fromisoformat(inv["due_date"])).days,
+        })
+    result.sort(key=lambda r: (r["due_date"], r["invoice_id"]))
+    return result
+
+
 @app.get("/businesses/{business_id}/inconsistencies")
 def inconsistencies(business_id: str):
     business, transactions, invoices, obligations = load(business_id)

@@ -122,6 +122,12 @@ Request: `{"customer":"Mehta Traders"}`
 ```json
 {"message":"Hello Mehta Traders, a gentle reminder that ..."}
 ```
+GET /businesses/{id}/invoices?unpaid=true
+Read-only. Without `unpaid=true` it returns every invoice. Sorted by due_date, then invoice_id. 404 for an unknown business.
+```json
+[{"invoice_id":"inv_64","customer":"Mehta Traders","amount":182315.0,"due_date":"2026-11-11","days_overdue":-18}]
+```
+`days_overdue` is negative when the invoice is not due yet. Unpaid means no paid_date, the same rule `/actions/simulate` uses.
 POST /statements/parse
 Request: multipart/form-data with one field `file` (PDF only, max 5 MB). Not tied to a business id.
 ```json
