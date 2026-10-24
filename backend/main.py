@@ -214,3 +214,12 @@ def reminders_draft(business_id: str, req: ReminderRequest):
     if not text:
         raise HTTPException(status_code=503, detail="The reminder service returned nothing")
     return {"message": text}
+
+
+# Serve the built frontend (frontend/dist) if it exists. Must stay last so it never shadows an API route.
+import os
+from fastapi.staticfiles import StaticFiles
+
+_dist = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "dist")
+if os.path.isdir(_dist):
+    app.mount("/", StaticFiles(directory=_dist, html=True), name="frontend")
